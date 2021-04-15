@@ -18,7 +18,6 @@ public class enemyspawner : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
 
-
             StartCoroutine(EnemyDrop());
             StartCoroutine(Enemydrop2());
         }
