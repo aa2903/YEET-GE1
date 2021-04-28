@@ -11,6 +11,12 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 30f;
+    public float shotDelay = 0.3f;
+    private float timeUntilNextShot;
+    public AudioSource Shootsound1;
+
+    // Update is called once per frame
+
 
     // Inspector option for the muzzle flash
     [SerializeField] ParticleSystem muzzleFlash;
@@ -22,12 +28,16 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        timeUntilNextShot -= Time.deltaTime;
+        if (Input.GetButtonDown("Fire1") && timeUntilNextShot <= 0.3f)
         {
             muzzleFlash.Play();
+            Shootsound1.Play();
             Shoot();
-
+            timeUntilNextShot = shotDelay;
         } 
+
+
     }
 
     private void Shoot()

@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+        BGMusic.Play();
+
         if (instance == null)
         {
             instance = this;

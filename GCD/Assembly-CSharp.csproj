@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\FootSteps.cs" />
     <Compile Include="Assets\Scripts\MenuControls.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
+    <Compile Include="Assets\Scripts\SledgeHealth.cs" />
     <Compile Include="Assets\Imports\Quake3Movement\Scripts\Q3PlayerDebug.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\PlayerSFX.cs" />
@@ -79,7 +80,7 @@
     <Compile Include="Assets\Scripts\BulletMove.cs" />
     <Compile Include="Assets\Monster_Orc (Troll)\Boss_animator.cs" />
     <Compile Include="Assets\Scripts\enemyspawner.cs" />
-    <Compile Include="Assets\Scripts\SledgeHealth.cs" />
+    <Compile Include="Assets\Gun.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />

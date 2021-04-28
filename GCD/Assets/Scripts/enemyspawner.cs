@@ -7,29 +7,29 @@ public class enemyspawner : MonoBehaviour
 
     public GameObject theEnemy;
 
-    public int xPos;
-    public int zPos;
-    public int enemyCount;
+    private int xPos;
+    private int zPos;
+    [SerializeField] private int enemyCount;
 
-
+    private bool spawned = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && spawned == false )
         {
-
+            spawned = true;
             StartCoroutine(EnemyDrop());
             StartCoroutine(Enemydrop2());
         }
-            
-     
+
         
     }
 
 
     IEnumerator Enemydrop2()
     {
-        while (enemyCount < 10)
+        int counter = 0;
+        while (counter < enemyCount)
         {
             //Spawn area on xaxis is in xcoordinates in 496 to 559
             xPos = Random.Range(496, 559);
@@ -39,13 +39,14 @@ public class enemyspawner : MonoBehaviour
             Instantiate(theEnemy, new Vector3(xPos, 1, zPos), Quaternion.identity);
 
             yield return new WaitForSeconds(0.1f);
-            enemyCount += 1;
+            counter += 1;
         }
     }
 
     IEnumerator EnemyDrop()
     {
-        while (enemyCount < 15)
+        int counter = 0;
+        while ( counter < enemyCount)
         {
             //Spawn area on xaxis is in xcoordinates in 535 to 600
             xPos = Random.Range(535, 600);
@@ -55,7 +56,7 @@ public class enemyspawner : MonoBehaviour
             Instantiate(theEnemy, new Vector3(xPos, 1, zPos), Quaternion.identity);
 
             yield return new WaitForSeconds(0.1f);
-            enemyCount += 1;
+            counter += 1;
         }
     }
 

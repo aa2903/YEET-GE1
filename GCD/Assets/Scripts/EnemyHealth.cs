@@ -20,7 +20,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (HitPoints <= 0 && !isDead)
         {
-             Destroy(gameObject, 2f);
+             Destroy(gameObject, 0.9f);
 
             deathtrig.SetTrigger("Death");
             deathgroan.Play();
